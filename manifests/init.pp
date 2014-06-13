@@ -65,6 +65,7 @@ class network {
 #   $dns2         - optional
 #   $domain       - optional
 #   $bridge       - optional
+#   $vlan         - optional, set to yes if using, and set name of device to <physdevice>.<vlanID>
 #
 # === Actions:
 #
@@ -108,7 +109,8 @@ define network_if_base (
   $dns1 = '',
   $dns2 = '',
   $domain = '',
-  $bridge = ''
+  $bridge = '',
+  $vlan = '',
 ) {
   # Validate our booleans
   validate_bool($userctl)
